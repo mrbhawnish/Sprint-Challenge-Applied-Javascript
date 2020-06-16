@@ -25,7 +25,6 @@ function Header() {
    let h1El = document.createElement("h1");
    let spanEl2 = document.createElement("span");
    spanEl2.classList.add("temp");
-
    //Adding texts
   spanEl1.textContent = "SMARCH 28, 2019";
   h1El.textContent = "Lambda Times";
