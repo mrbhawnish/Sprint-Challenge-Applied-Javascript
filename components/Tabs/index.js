@@ -7,3 +7,28 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+
+function buttonCreator(buttonTitle){
+    
+    let tabButton = document.createElement('button');
+    tabButton.textContent = buttonTitle;
+    tabButton.classList.add('tab');
+
+
+    return tabButton;
+}
+
+let myTopics = document.querySelector(".topics");
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+ .then((res) => {
+      res.data.topics.forEach(item => {            
+           myTopics.append(buttonCreator(item));
+       });
+    })
+    .catch( error => {
+      alert("Error:", error);
+   })
+    
+    
